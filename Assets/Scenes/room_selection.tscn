@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjbg4jk025y5l"]
+
+[ext_resource type="Texture2D" uid="uid://ue8ui8pui6k" path="res://Assets/Art/5nightsatCheeze.jpg" id="1_h51ot"]
+[ext_resource type="Script" path="res://Assets/Scripts/room_selection.gd" id="1_o58ok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5yh5"]
+size = Vector2(179, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jn0x7"]
+size = Vector2(246, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ot8p"]
+size = Vector2(406, 349)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52ey6"]
+size = Vector2(240, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdo0"]
+size = Vector2(189, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uej7"]
+size = Vector2(168, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfx30"]
+size = Vector2(168, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3cbv"]
+size = Vector2(213, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fb1bx"]
+size = Vector2(450, 294)
+
+[node name="RoomSelection" type="Node2D"]
+script = ExtResource("1_o58ok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h51ot")
+
+[node name="ColliderHouse" type="Node2D" parent="."]
+
+[node name="KazRoom" type="Area2D" parent="ColliderHouse"]
+
+[node name="KazRoom" type="CollisionShape2D" parent="ColliderHouse/KazRoom"]
+position = Vector2(-435.5, -257)
+shape = SubResource("RectangleShape2D_u5yh5")
+
+[node name="MovieRoom" type="Area2D" parent="ColliderHouse"]
+
+[node name="MovieRoom" type="CollisionShape2D" parent="ColliderHouse/MovieRoom"]
+position = Vector2(-121, -354.5)
+shape = SubResource("RectangleShape2D_jn0x7")
+
+[node name="ThirdSpace" type="Area2D" parent="ColliderHouse"]
+
+[node name="ThirdSpace" type="CollisionShape2D" parent="ColliderHouse/ThirdSpace"]
+position = Vector2(444, -219.5)
+shape = SubResource("RectangleShape2D_8ot8p")
+
+[node name="TheGrater" type="Area2D" parent="ColliderHouse"]
+
+[node name="TheGrater" type="CollisionShape2D" parent="ColliderHouse/TheGrater"]
+position = Vector2(462, 69)
+shape = SubResource("RectangleShape2D_52ey6")
+
+[node name="IKB" type="Area2D" parent="ColliderHouse"]
+
+[node name="IKB" type="CollisionShape2D" parent="ColliderHouse/IKB"]
+position = Vector2(-282.5, -119.5)
+shape = SubResource("RectangleShape2D_uvdo0")
+
+[node name="Deco" type="Area2D" parent="ColliderHouse"]
+
+[node name="Deco" type="CollisionShape2D" parent="ColliderHouse/Deco"]
+position = Vector2(-299, -11)
+shape = SubResource("RectangleShape2D_1uej7")
+
+[node name="Palmy" type="Area2D" parent="ColliderHouse"]
+
+[node name="Palmy" type="CollisionShape2D" parent="ColliderHouse/Palmy"]
+position = Vector2(47, -117.5)
+shape = SubResource("RectangleShape2D_lfx30")
+
+[node name="Kitchen" type="Area2D" parent="ColliderHouse"]
+
+[node name="Kitchen" type="CollisionShape2D" parent="ColliderHouse/Kitchen"]
+position = Vector2(61.5, -8.5)
+shape = SubResource("RectangleShape2D_e3cbv")
+
+[node name="Exit" type="Area2D" parent="ColliderHouse"]
+
+[node name="Exit" type="CollisionShape2D" parent="ColliderHouse/Exit"]
+position = Vector2(-412, 266)
+shape = SubResource("RectangleShape2D_fb1bx")

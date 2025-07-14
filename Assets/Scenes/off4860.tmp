@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://corxlktm4cd7p"]
+
+[ext_resource type="PackedScene" uid="uid://bjbg4jk025y5l" path="res://Assets/Scenes/room_selection.tscn" id="1_swttp"]
+[ext_resource type="Texture2D" uid="uid://7yuo1xqh6t70" path="res://Assets/Art/frpg guy 2.jpg" id="2_pu6v3"]
+
+[node name="Office" type="Node2D"]
+
+[node name="RoomSelection" parent="." instance=ExtResource("1_swttp")]
+position = Vector2(866, 442)
+scale = Vector2(0.4, 0.4)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(225, 249)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("2_pu6v3")
