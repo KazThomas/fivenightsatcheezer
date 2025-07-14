@@ -25,7 +25,7 @@ func attack():
 	if can_move:
 		var tween = get_tree().create_tween()
 		tween.tween_property(enemy, "position", move_in_from_left, MOVE_SPEED)
-		can_move = false
+		can_move = false #change to github
 		jumpscare()
 
 func jumpscare():
