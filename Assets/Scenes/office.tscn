@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://corxlktm4cd7p"]
+[gd_scene load_steps=6 format=3 uid="uid://corxlktm4cd7p"]
 
+[ext_resource type="Script" path="res://Assets/Scripts/game_manager.gd" id="1_aaj8r"]
 [ext_resource type="PackedScene" uid="uid://bjbg4jk025y5l" path="res://Assets/Scenes/room_selection.tscn" id="1_swttp"]
 [ext_resource type="Texture2D" uid="uid://7yuo1xqh6t70" path="res://Assets/Art/frpgguy2.jpg" id="2_pu6v3"]
 [ext_resource type="Script" path="res://Assets/Scripts/enemy_move.gd" id="3_016vl"]
@@ -7,7 +8,11 @@
 
 [node name="Office" type="Node2D"]
 
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("1_aaj8r")
+
 [node name="RoomSelection" parent="." instance=ExtResource("1_swttp")]
+visible = false
 position = Vector2(866, 442)
 scale = Vector2(0.4, 0.4)
 
@@ -27,3 +32,12 @@ script = ExtResource("3_016vl")
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("3_amivt")
+
+[node name="Camera" type="Button" parent="."]
+offset_left = 1023.0
+offset_top = 215.0
+offset_right = 1125.0
+offset_bottom = 261.0
+text = "Camera"
+
+[connection signal="pressed" from="Camera" to="GameManager" method="_on_camera_button_pressed"]

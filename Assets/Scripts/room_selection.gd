@@ -15,6 +15,7 @@ var original_img = str("res://Assets/Art/frpgguy2.jpg")
 var has_changed = true
 func _ready() -> void:
 	background_img = $"../Background".get_node("Sprite2D")
+	
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
