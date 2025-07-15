@@ -46,6 +46,5 @@ text = "Camera"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_2earh")
-volume_db = 3.388
 
 [connection signal="pressed" from="Camera" to="GameManager" method="_on_camera_button_pressed"]
