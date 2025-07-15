@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://corxlktm4cd7p"]
+[gd_scene load_steps=8 format=3 uid="uid://corxlktm4cd7p"]
 
 [ext_resource type="AudioStream" uid="uid://b036u5b8dhw5h" path="res://Assets/Sounds/moving-stone.mp3" id="1_2earh"]
 [ext_resource type="Script" path="res://Assets/Scripts/game_manager.gd" id="1_aaj8r"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://7yuo1xqh6t70" path="res://Assets/Art/frpgguy2.jpg" id="2_pu6v3"]
 [ext_resource type="Script" path="res://Assets/Scripts/enemy_move.gd" id="3_016vl"]
 [ext_resource type="Texture2D" uid="uid://df81emhmw5yjn" path="res://Assets/Art/strong_boi.png" id="3_amivt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqwev"]
+size = Vector2(30, 27)
 
 [node name="Office" type="Node2D"]
 
@@ -27,6 +30,14 @@ position = Vector2(225, 249)
 scale = Vector2(0.115, 0.115)
 texture = ExtResource("2_pu6v3")
 
+[node name="Boop" type="Area2D" parent="Background"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Boop"]
+position = Vector2(217, 150.5)
+shape = SubResource("RectangleShape2D_jqwev")
+
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Enemy" type="Node2D" parent="."]
@@ -44,7 +55,9 @@ offset_right = 1125.0
 offset_bottom = 261.0
 text = "Camera"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="EnemyAudio" type="AudioStreamPlayer" parent="."]
+
+[node name="InteractionAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_2earh")
 volume_db = 3.388
 

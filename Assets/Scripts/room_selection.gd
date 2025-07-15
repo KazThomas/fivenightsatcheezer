@@ -5,9 +5,11 @@ signal left_mouse_released
 
 
 const COLLISION_MASK_ROOM = 1
+const COLLISION_MASK_INTERACTABLE = 2
 
 var inputs_disabled = false
 var background_img
+var game_manager
 
 var replacement_img = str("res://Assets/Art/scorsepeup.jpg")
 var original_img = str("res://Assets/Art/frpgguy2.jpg")
@@ -15,7 +17,7 @@ var original_img = str("res://Assets/Art/frpgguy2.jpg")
 var has_changed = true
 func _ready() -> void:
 	background_img = $"../Background".get_node("Sprite2D")
-	
+	game_manager = $"../GameManager"
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -33,14 +35,17 @@ func raycast_at_cursor():
 	var result = space_state.intersect_point(parameters)
 	if result.size() > 0:
 		var result_col_mask = result[0].collider.collision_mask
+		var result_name = result[0].collider.name
 		if result_col_mask == COLLISION_MASK_ROOM:
-			var result_name = result[0].collider.name
 			if result_name != "Exit":
 				#change the background to the new room
 				change_room(result_name)
 			else:
 				#exit the room selection thing (back to full office)
 				$"../GameManager"._on_camera_button_pressed()
+		elif result_col_mask == COLLISION_MASK_INTERACTABLE:
+			if result_name == "Boop":
+				game_manager.boop()
 
 func change_room(roomname):
 	#CHANGE IMAGES ~~~~FOR PROTOTYPE USE ONLY~~
