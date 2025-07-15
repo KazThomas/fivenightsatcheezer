@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 
 func _on_camera_button_pressed() -> void:
-	if is_visible == false:
+	if is_visible == false: #make it clickable and visible
 		room_selection.propagate_call("set_disabled", [false])
 		room_selection.propagate_call("set_visible", [true])
 		is_visible = true

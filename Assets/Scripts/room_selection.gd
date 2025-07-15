@@ -43,13 +43,14 @@ func raycast_at_cursor():
 				$"../GameManager"._on_camera_button_pressed()
 
 func change_room(roomname):
-	
+	#CHANGE IMAGES ~~~~FOR PROTOTYPE USE ONLY~~
 	if has_changed == true:
 		background_img.texture = load(replacement_img)
 		has_changed = false
 	else:
 		background_img.texture = load(original_img)
 		has_changed = true
+	#use below for final
 	match roomname:
 		"KazRoom":
 			print("In KazRoom")
