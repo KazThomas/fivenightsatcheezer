@@ -11,8 +11,8 @@ var inputs_disabled = false
 var background_img
 var game_manager
 
-var replacement_img = str("res://Assets/Art/scorsepeup.jpg")
-var original_img = str("res://Assets/Art/frpgguy2.jpg")
+var replacement_img = load("res://Assets/Art/scorsepeup.jpg")
+var original_img = load("res://Assets/Art/frpgguy2.jpg")
 
 var has_changed = true
 func _ready() -> void:
@@ -50,10 +50,10 @@ func raycast_at_cursor():
 func change_room(roomname):
 	#CHANGE IMAGES ~~~~FOR PROTOTYPE USE ONLY~~
 	if has_changed == true:
-		background_img.texture = load(replacement_img)
+		background_img.texture = replacement_img
 		has_changed = false
 	else:
-		background_img.texture = load(original_img)
+		background_img.texture = original_img
 		has_changed = true
 	#use below for final
 	match roomname:
