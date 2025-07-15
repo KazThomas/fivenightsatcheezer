@@ -40,7 +40,7 @@ func raycast_at_cursor():
 				change_room(result_name)
 			else:
 				#exit the room selection thing (back to full office)
-				print("Exited Camera")
+				$"../GameManager"._on_camera_button_pressed()
 
 func change_room(roomname):
 	
