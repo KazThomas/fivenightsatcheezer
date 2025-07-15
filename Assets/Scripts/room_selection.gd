@@ -67,3 +67,5 @@ func change_room(roomname):
 			print("Having Pizza")
 		"Kitchen":
 			print("Having a worse Pizza")
+		"Fia":
+			print("You're trapped in Spoons forever")

@@ -1,16 +1,19 @@
 extends Node
 
-
 const MOVE_SPEED = 4
-var ai_timer
 
+var ai_timer
+var audio_player 
 var enemy
 var can_move = true
 var can_grow = false
 
+var stone_sound = load("res://Assets/Sounds/moving-stone.mp3")
+
 func _ready() -> void:
 	ai_timer = $"../Timer"
 	enemy = $"."
+	audio_player = $"../AudioStreamPlayer2D"
 
 func wait(wait_time):
 	ai_timer.wait_time = wait_time
@@ -27,6 +30,9 @@ func attack():
 		tween.tween_property(enemy, "position", move_in_from_left, MOVE_SPEED)
 		can_move = false #change to github
 		jumpscare()
+	if !audio_player.is_playing:
+		audio_player.stream = stone_sound
+		audio_player.play()
 
 func jumpscare():
 	var scare = get_tree().create_tween()

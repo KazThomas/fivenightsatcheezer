@@ -1,89 +1,94 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjbg4jk025y5l"]
+[gd_scene load_steps=13 format=3 uid="uid://bjbg4jk025y5l"]
 
-[ext_resource type="Texture2D" uid="uid://ue8ui8pui6k" path="res://Assets/Art/5nightsatCheeze.jpg" id="1_h51ot"]
 [ext_resource type="Script" path="res://Assets/Scripts/room_selection.gd" id="1_o58ok"]
+[ext_resource type="Texture2D" uid="uid://c6j1lbickrx3o" path="res://Assets/Art/newmap.png" id="2_hdr6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5yh5"]
-size = Vector2(179, 126)
+size = Vector2(154, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jn0x7"]
-size = Vector2(246, 83)
+size = Vector2(246, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ot8p"]
-size = Vector2(406, 349)
+size = Vector2(374, 326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52ey6"]
-size = Vector2(240, 130)
+size = Vector2(181, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdo0"]
-size = Vector2(189, 111)
+size = Vector2(174, 109)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1uej7"]
-size = Vector2(168, 74)
+size = Vector2(152, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfx30"]
-size = Vector2(168, 101)
+size = Vector2(160, 85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3cbv"]
-size = Vector2(213, 85)
+size = Vector2(195, 75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fb1bx"]
 size = Vector2(450, 294)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w2o1"]
+size = Vector2(183, 78)
 
 [node name="RoomSelection" type="Node2D"]
 script = ExtResource("1_o58ok")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_h51ot")
+position = Vector2(0, -6.25)
+scale = Vector2(1, 1.0192)
+texture = ExtResource("2_hdr6t")
 
 [node name="ColliderHouse" type="Node2D" parent="."]
 
 [node name="KazRoom" type="Area2D" parent="ColliderHouse"]
 
 [node name="KazRoom" type="CollisionShape2D" parent="ColliderHouse/KazRoom"]
-position = Vector2(-435.5, -257)
+position = Vector2(-395, -176)
 shape = SubResource("RectangleShape2D_u5yh5")
 
 [node name="MovieRoom" type="Area2D" parent="ColliderHouse"]
 
 [node name="MovieRoom" type="CollisionShape2D" parent="ColliderHouse/MovieRoom"]
-position = Vector2(-121, -354.5)
+position = Vector2(-121, -270.5)
 shape = SubResource("RectangleShape2D_jn0x7")
 
 [node name="ThirdSpace" type="Area2D" parent="ColliderHouse"]
 
 [node name="ThirdSpace" type="CollisionShape2D" parent="ColliderHouse/ThirdSpace"]
-position = Vector2(444, -219.5)
+position = Vector2(398, -140)
 shape = SubResource("RectangleShape2D_8ot8p")
 
 [node name="TheGrater" type="Area2D" parent="ColliderHouse"]
 
 [node name="TheGrater" type="CollisionShape2D" parent="ColliderHouse/TheGrater"]
-position = Vector2(462, 69)
+position = Vector2(428.5, 128)
 shape = SubResource("RectangleShape2D_52ey6")
 
 [node name="IKB" type="Area2D" parent="ColliderHouse"]
 
 [node name="IKB" type="CollisionShape2D" parent="ColliderHouse/IKB"]
-position = Vector2(-282.5, -119.5)
+position = Vector2(-258, -45.5)
 shape = SubResource("RectangleShape2D_uvdo0")
 
 [node name="Deco" type="Area2D" parent="ColliderHouse"]
 
 [node name="Deco" type="CollisionShape2D" parent="ColliderHouse/Deco"]
-position = Vector2(-299, -11)
+position = Vector2(-278, 56)
 shape = SubResource("RectangleShape2D_1uej7")
 
 [node name="Palmy" type="Area2D" parent="ColliderHouse"]
 
 [node name="Palmy" type="CollisionShape2D" parent="ColliderHouse/Palmy"]
-position = Vector2(47, -117.5)
+position = Vector2(43, -43.5)
 shape = SubResource("RectangleShape2D_lfx30")
 
 [node name="Kitchen" type="Area2D" parent="ColliderHouse"]
 
 [node name="Kitchen" type="CollisionShape2D" parent="ColliderHouse/Kitchen"]
-position = Vector2(61.5, -8.5)
+position = Vector2(57.5, 52.5)
 shape = SubResource("RectangleShape2D_e3cbv")
 
 [node name="Exit" type="Area2D" parent="ColliderHouse"]
@@ -91,3 +96,9 @@ shape = SubResource("RectangleShape2D_e3cbv")
 [node name="Exit" type="CollisionShape2D" parent="ColliderHouse/Exit"]
 position = Vector2(-412, 266)
 shape = SubResource("RectangleShape2D_fb1bx")
+
+[node name="Fia" type="Area2D" parent="ColliderHouse"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColliderHouse/Fia"]
+position = Vector2(105.5, -270)
+shape = SubResource("RectangleShape2D_4w2o1")
